@@ -2,7 +2,40 @@
 @model Moment1.Pages.RazorModel
 @{
     ViewData["Title"] = "Razor";
+
+    //Deklarera dagens datum
+    var date = DateTime.Now;
+
+    //Deklarerar vilken veckodag det är idag
+    DayOfWeek today = DateTime.Now.DayOfWeek;
+
+    //Tom sträng
+    var monday = "";
+
+    //Kontroll om veckodagen är måndag idag eller inte och lagrar textsträng
+    if (today == DayOfWeek.Monday)
+    {
+        monday = "måndag!";
+    } else
+    {
+        monday = "inte måndag!";
+    }
+
+    //Array för kurser
+    string[] courses = { "DT000G, Test", "DT001G, Test 2" };
 }
 <h1>@ViewData["Title"]</h1>
 
-<p>Sida för Razor!</p>
+<b>Information</b>
+
+<p><b>Datum/klockslag:</b> @date</p>
+
+<p>Idag är det @monday</p>
+
+<b>Kurser jag läst:</b>
+
+<ul>
+    @foreach (var course in courses) {
+        <li>@course</li>
+    }
+</ul>
