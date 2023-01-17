@@ -1,22 +1,157 @@
-html {
-  font-size: 14px;
-}
-
-@media (min-width: 768px) {
-  html {
-    font-size: 16px;
-  }
-}
-
-.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
-  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
-}
-
-html {
-  position: relative;
-  min-height: 100%;
+* {
+    box-sizing: border-box;
 }
 
 body {
-  margin-bottom: 60px;
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px;
+    line-height: 160%;
+    background-color: rgb(36, 35, 35);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+h1, h2, b, thead {
+    color: rgb(240, 193, 5);
+}
+
+p, td {
+    color: rgb(219, 219, 212);
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    background-color: rgb(26, 26, 28);
+    color: rgb(240, 193, 5);
+    padding: 30px;
+}
+
+.logo {
+    text-align: left;
+    background-color: rgb(36, 35, 35);
+    padding: 20px;
+    margin-left: 10px;
+    font-weight: 700;
+}
+
+.date b {
+    color: rgb(219, 219, 212);
+}
+
+.container {
+    display: flex;
+    flex-grow: 1;
+    margin: 20px;
+}
+
+.sidenav {
+    background-color: rgb(26, 26, 28);
+    padding: 30px;
+    margin-right: 20px;
+}
+
+nav {
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+}
+
+.nav-link {
+    display: block;
+    text-decoration: none;
+    font-size: 22px;
+    color: rgb(240, 193, 5);
+    background-color: rgb(36, 35, 35);
+    font-weight: 700;
+    margin-bottom: 10px;
+    padding: 10px;
+    text-align: center;
+}
+
+a:hover {
+    color: rgb(219, 219, 212);
+}
+
+.main {
+    width: 100%;
+    background-color: rgb(26, 26, 28);
+    padding: 0 40px 0 40px;
+}
+
+li {
+    color: rgb(219, 219, 212);
+}
+
+li:nth-child(even) {
+    color: rgb(166, 166, 160);
+}
+
+.tablecontainer {
+    width: 100%;
+    border: 2px solid red;
+}
+
+table {
+    width: 100%;
+}
+
+thead {
+    text-align: left;
+}
+
+footer {
+    background-color: rgb(26, 26, 28);
+    text-align: center;
+    padding: 30px;
+    font-weight: 700;
+    margin-top: auto;
+}
+
+footer p {
+    color: rgb(219, 219, 212);
+}
+
+.email {
+    text-decoration: none;
+    color: rgb(240, 193, 5);
+}
+
+@media (max-width: 650px) {
+    .container {
+        flex-direction: column;
+    }
+
+    h1 {
+        text-align: center;
+    }
+
+    .sidenav {
+        margin-right: 0;
+    }
+
+    nav {
+        width: auto;
+    }
+
+    table {
+        margin: 0 auto;
+    }
+
+    .logo {
+        margin-left: 0;
+    }
+}
+
+@media (max-width: 560px) {
+    header {
+        flex-direction: column;
+    }
+
+    .date {
+        margin: 10px auto 0 auto;
+        padding: 0;
+    }
 }
